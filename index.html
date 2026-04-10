@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CET Rank Predictor Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Deep vibrant theme */
+        :root {
+            --primary: #6366f1;
+            --primary-hover: #4f46e5;
+            --bg: #0f172a;
+            --glass-bg: rgba(30, 41, 59, 0.7);
+            --border: rgba(255, 255, 255, 0.1);
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --danger: #ef4444;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1e293b, var(--bg));
+            color: var(--text-light);
+            margin: 0;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.2rem;
+            background: linear-gradient(135deg, #a855f7, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 2rem;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        input[type="text"], input[type="number"], select {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border);
+            color: var(--text-light);
+            padding: 0.85rem 1rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+
+        select[multiple] {
+            height: 120px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            background: rgba(15, 23, 42, 0.4);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+        
+        .checkbox-item input {
+            cursor: pointer;
+            width: 1.2rem;
+            height: 1.2rem;
+            accent-color: var(--primary);
+        }
+
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 1.2rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+            grid-column: 1 / -1;
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+            margin-top: 1rem;
+        }
+
+        button:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        #error {
+            grid-column: 1 / -1;
+            color: #fca5a5;
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.5);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            display: none;
+        }
+
+        #results {
+            margin-top: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .result-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 12px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        
+        .result-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary);
+        }
+
+        .result-card h4 {
+            margin: 0 0 1rem 0;
+            font-size: 1.2rem;
+            color: #e2e8f0;
+        }
+
+        .badge-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(99, 102, 241, 0.2);
+            color: #818cf8;
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 768px) {
+            form { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Admission Cutoff Predictor</h1>
+        
+        <form id="cutoffForm">
+            <div id="error"></div>
+            
+            <div class="form-group">
+                <label>Gender</label>
+                <select name="user_gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Category</label>
+                <select name="user_category" id="userCategory" required>
+                    <option value="OPEN">OPEN</option>
+                    <option value="OBC">OBC</option>
+                    <option value="SC">SC</option>
+                    <option value="ST">ST</option>
+                    <option value="NT1">NT1</option>
+                    <option value="NT2">NT2</option>
+                    <option value="NT3">NT3</option>
+                    <option value="VJ">VJ</option>
+                </select>
+            </div>
+
+            <div class="form-group full-width">
+                <label>Home University</label>
+                <select name="user_home_university" id="homeUniversitySelect" required>
+                    <option value="">Loading universities from API...</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Target Cities (Ctrl+Click to select multiple)</label>
+                <select name="citySelect" id="citySelect" multiple>
+                    <option value="">Loading cities...</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Target Divisions (Ctrl+Click to select multiple)</label>
+                <select name="divisionSelect" id="divisionSelect" multiple>
+                    <option value="">Loading divisions...</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>CET Percentile</label>
+                <input type="number" step="0.0000001" name="percentile_cet" value="85.50" required>
+            </div>
+
+            <div class="form-group">
+                <label>JEE (AI) Percentile</label>
+                <input type="number" step="0.0000001" name="percentile_ai" value="80.00" required>
+            </div>
+
+            <div class="form-group full-width">
+                <label>Minority List (Comma separated, e.g. Jain, Muslim)</label>
+                <input type="text" name="user_minority_list" placeholder="Leave blank if none">
+            </div>
+
+            <div class="form-group full-width">
+                <label>Branch Preferences</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-item"><input type="checkbox" name="is_tech" checked> Computer/IT</label>
+                    <label class="checkbox-item"><input type="checkbox" name="is_electronic"> E&TC/Electronics</label>
+                    <label class="checkbox-item"><input type="checkbox" name="is_mechanical"> Mechanical</label>
+                    <label class="checkbox-item"><input type="checkbox" name="is_civil"> Civil</label>
+                    <label class="checkbox-item"><input type="checkbox" name="is_electrical"> Electrical</label>
+                    <label class="checkbox-item"><input type="checkbox" name="is_other"> Other</label>
+                </div>
+            </div>
+
+            <div class="form-group full-width" style="margin-top: 0.5rem;">
+                <label class="checkbox-item" style="font-size:1.05rem; color: #f1f5f9; padding: 1rem; background: rgba(99, 102, 241, 0.1); border-radius: 8px; border: 1px solid rgba(99, 102, 241, 0.3);">
+                    <input type="checkbox" name="is_ews" id="ewsCheckbox"> 
+                    Apply for EWS (Economically Weaker Section) - Valid only for OPEN category
+                </label>
+            </div>
+
+            <button type="submit" id="submitBtn">Predict Eligible Colleges</button>
+        </form>
+
+        <div id="results"></div>
+    </div>
+
+    <script>
+        // Start script execution
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Fetch metadata to populate dropdowns dynamically using our newly created route
+            async function fetchMetadata() {
+                try {
+                    const res = await fetch('http://127.0.0.1:8000/api/v1/metadata');
+                    if (!res.ok) throw new Error("Could not connect to FastAPI server. Please ensure it is running on Port 8000.");
+                    
+                    const data = await res.json();
+                    const formatOpts = (arr) => arr.map(i => `<option value="${i}">${i}</option>`).join('');
+                    
+                    document.getElementById('homeUniversitySelect').innerHTML = '<option value="">-- Select Home University --</option>' + formatOpts(data.universities);
+                    document.getElementById('citySelect').innerHTML = formatOpts(data.cities);
+                    document.getElementById('divisionSelect').innerHTML = formatOpts(data.divisions);
+                } catch (err) {
+                    document.getElementById('error').textContent = "Failed to load DB Form Metadata: " + err.message;
+                    document.getElementById('error').style.display = 'block';
+                }
+            }
+            
+            fetchMetadata();
+
+            // Client-side EWS lock logic matching the backend
+            const categorySelect = document.getElementById('userCategory');
+            const ewsCheckbox = document.getElementById('ewsCheckbox');
+            
+            categorySelect.addEventListener('change', (e) => {
+                if (e.target.value !== 'OPEN') {
+                    ewsCheckbox.checked = false;
+                    ewsCheckbox.disabled = true;
+                } else {
+                    ewsCheckbox.disabled = false;
+                }
+            });
+
+            // Submission Handler
+            document.getElementById('cutoffForm').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const btn = document.getElementById('submitBtn');
+                const errorDiv = document.getElementById('error');
+                const resultsDiv = document.getElementById('results');
+                
+                btn.innerHTML = 'Analyzing Database...';
+                btn.disabled = true;
+                errorDiv.style.display = 'none';
+                resultsDiv.innerHTML = '';
+
+                const fd = new FormData(e.target);
+                
+                const getMultiSelect = (elementId) => {
+                    const select = document.getElementById(elementId);
+                    const selected = Array.from(select.selectedOptions).map(opt => opt.value);
+                    return selected.length > 0 ? selected : null;
+                };
+
+                const minoritiesRaw = fd.get('user_minority_list') || "";
+                const minoritiesArray = minoritiesRaw.split(',').map(s => s.trim()).filter(s => s.length > 0);
+
+                const payload = {
+                    user_gender: fd.get('user_gender'),
+                    user_category: fd.get('user_category'),
+                    user_minority_list: minoritiesArray,
+                    user_home_university: fd.get('user_home_university'),
+                    division: getMultiSelect('divisionSelect'),
+                    city: getMultiSelect('citySelect'),
+                    percentile_cet: parseFloat(fd.get('percentile_cet')),
+                    percentile_ai: parseFloat(fd.get('percentile_ai')),
+                    is_tech: fd.has('is_tech'),
+                    is_civil: fd.has('is_civil'),
+                    is_mechanical: fd.has('is_mechanical'),
+                    is_electrical: fd.has('is_electrical'),
+                    is_electronic: fd.has('is_electronic'),
+                    is_other: fd.has('is_other'),
+                    is_ews: fd.has('is_ews')
+                };
+
+                try {
+                    const res = await fetch('http://127.0.0.1:8000/api/v1/get-cutoffs', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    
+                    const data = await res.json();
+                    
+                    if (!res.ok) {
+                        throw new Error(data.detail || "Server error occurred");
+                    }
+
+                    if (!data.results || data.results.length === 0) {
+                        resultsDiv.innerHTML = `
+                            <div style="text-align:center; padding: 2rem; background: rgba(255,255,255,0.05); border-radius: 12px;">
+                                <h3 style="color:#94a3b8; margin:0;">No colleges found within ±10 percentile range for these constraints.</h3>
+                            </div>
+                        `;
+                    } else {
+                        resultsDiv.innerHTML = `<h3 style="color: #4ade80;">Found ${data.count} eligible options</h3>`;
+                        
+                        // Render UI Cards
+                        data.results.forEach(item => {
+                            resultsDiv.innerHTML += `
+                                <div class="result-card">
+                                    <h4>${item.college_name} (${item.college_code})</h4>
+                                    <div class="badge-container">
+                                        <span class="badge" style="background: rgba(148, 163, 184, 0.2); color: #cbd5e1;">📍 ${item.city} | ${item.division}</span>
+                                        <span class="badge" style="background: rgba(234, 179, 8, 0.2); color: #facc15;">📚 ${item.branch_name}</span>
+                                        <span class="badge" style="background: rgba(34, 197, 94, 0.2); color: #4ade80;">🏆 Merit Rank: ${item.merit_rank}</span>
+                                        <span class="badge" style="background: rgba(236, 72, 153, 0.2); color: #f472b6;">📈 Percentile: ${item.percentile}</span>
+                                    </div>
+                                    <p style="color: #94a3b8; font-size: 0.95rem; margin:0;">
+                                        Allotted under Selection Category: <strong style="color: #f8fafc; padding: 2px 6px; background: rgba(255,255,255,0.1); border-radius: 4px;">${item.reservation_category}</strong>
+                                    </p>
+                                </div>
+                            `;
+                        });
+                    }
+
+                } catch (err) {
+                    errorDiv.textContent = err.message;
+                    errorDiv.style.display = 'block';
+                } finally {
+                    btn.textContent = 'Predict Eligible Colleges';
+                    btn.disabled = false;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

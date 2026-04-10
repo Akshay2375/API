@@ -1,0 +1,362 @@
+[
+    {
+        "college_name": "Yeshwantrao Chavan College of Engineering,Wanadongri, Nagpur",
+        "branch_name": "Computer Science and Engineering",
+        "reservation_category": "EWS",
+        "percentile": 90.7235685,
+        "sorting_value": 95.8450956,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Yeshwantrao Chavan College of Engineering,Wanadongri, Nagpur",
+        "branch_name": "Information Technology",
+        "reservation_category": "EWS",
+        "percentile": 87.1376478,
+        "sorting_value": 94.1814562,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Yeshwantrao Chavan College of Engineering,Wanadongri, Nagpur",
+        "branch_name": "Artificial Intelligence and Data Science",
+        "reservation_category": "EWS",
+        "percentile": 87.4115391,
+        "sorting_value": 93.6851271,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Yeshwantrao Chavan College of Engineering,Wanadongri, Nagpur",
+        "branch_name": "Computer Technology",
+        "reservation_category": "EWS",
+        "percentile": 84.5627208,
+        "sorting_value": 93.4570631,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Yeshwantrao Chavan College of Engineering,Wanadongri, Nagpur",
+        "branch_name": "Computer Science and Design",
+        "reservation_category": "EWS",
+        "percentile": 84.1437716,
+        "sorting_value": 92.4172762,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Yeshwantrao Chavan College of Engineering,Wanadongri, Nagpur",
+        "branch_name": "Computer Science and Engineering (IoT)",
+        "reservation_category": "EWS",
+        "percentile": 84.9728618,
+        "sorting_value": 92.2398466,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Ankush Shikshan Sanstha's G.H.Raisoni College of Engineering, Nagpur",
+        "branch_name": "Computer Science and Engineering",
+        "reservation_category": "GOPENS",
+        "percentile": 90.8833776,
+        "sorting_value": 91.3015715,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "ST. Vincent Pallotti College of Engineering & Technology, Nagpur",
+        "branch_name": "Computer Science and Engineering",
+        "reservation_category": "GOPENS",
+        "percentile": 90.0917161,
+        "sorting_value": 91.051072,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "ST. Vincent Pallotti College of Engineering & Technology, Nagpur",
+        "branch_name": "Computer Science and Engineering(Data Science)",
+        "reservation_category": "GOPENS",
+        "percentile": 87.5666075,
+        "sorting_value": 89.8520525,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "ST. Vincent Pallotti College of Engineering & Technology, Nagpur",
+        "branch_name": "Artificial Intelligence",
+        "reservation_category": "GOPENS",
+        "percentile": 87.687217,
+        "sorting_value": 89.51289,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "ST. Vincent Pallotti College of Engineering & Technology, Nagpur",
+        "branch_name": "Information Technology",
+        "reservation_category": "GOPENS",
+        "percentile": 88.7615737,
+        "sorting_value": 89.3717407,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Ankush Shikshan Sanstha's G.H.Raisoni College of Engineering, Nagpur",
+        "branch_name": "Computer Science and Engineering (Cyber Security)",
+        "reservation_category": "GOPENS",
+        "percentile": 86.5435447,
+        "sorting_value": 89.2894353,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "G H Raisoni College of Engineering & Management, Nagpur",
+        "branch_name": "Computer Science and Engineering",
+        "reservation_category": "GOPENS",
+        "percentile": 88.7700729,
+        "sorting_value": 89.2739334,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Ankush Shikshan Sanstha's G.H.Raisoni College of Engineering, Nagpur",
+        "branch_name": "Information Technology",
+        "reservation_category": "GOPENS",
+        "percentile": 88.5372351,
+        "sorting_value": 88.9773781,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Ankush Shikshan Sanstha's G.H.Raisoni College of Engineering, Nagpur",
+        "branch_name": "Computer Science and Engineering(Artificial Intelligence and Machine Learning)",
+        "reservation_category": "GOPENS",
+        "percentile": 88.2544975,
+        "sorting_value": 88.3826292,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "G H Raisoni College of Engineering & Management, Nagpur",
+        "branch_name": "Information Technology",
+        "reservation_category": "GOPENS",
+        "percentile": 87.7785554,
+        "sorting_value": 87.9159305,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Ankush Shikshan Sanstha's G.H.Raisoni College of Engineering, Nagpur",
+        "branch_name": "Computer Science and Engineering (Artificial Intelligence)",
+        "reservation_category": "GOPENS",
+        "percentile": 87.3029561,
+        "sorting_value": 87.6831328,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Lokmanya Tilak Jankalyan Shikshan Sanstha, Priyadarshani College of Engineering, Nagpur",
+        "branch_name": "Computer Science and Engineering",
+        "reservation_category": "GOPENS",
+        "percentile": 86.552754,
+        "sorting_value": 87.5995489,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "G H Raisoni College of Engineering & Management, Nagpur",
+        "branch_name": "Computer Science and Engineering(Cyber Security)",
+        "reservation_category": "GOPENS",
+        "percentile": 86.2326458,
+        "sorting_value": 87.5995489,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Ankush Shikshan Sanstha's G.H.Raisoni College of Engineering, Nagpur",
+        "branch_name": "Data Science",
+        "reservation_category": "GOPENS",
+        "percentile": 86.4120225,
+        "sorting_value": 87.0323929,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Ankush Shikshan Sanstha's G.H.Raisoni College of Engineering, Nagpur",
+        "branch_name": "Artificial Intelligence",
+        "reservation_category": "GOPENS",
+        "percentile": 86.6718198,
+        "sorting_value": 87.0323929,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "ST. Vincent Pallotti College of Engineering & Technology, Nagpur",
+        "branch_name": "Computer Science and Engineering (Cyber Security)",
+        "reservation_category": "GOPENS",
+        "percentile": 86.7202099,
+        "sorting_value": 86.9194446,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Ankush Shikshan Sanstha's G.H.Raisoni College of Engineering, Nagpur",
+        "branch_name": "Computer Science and Engineering (IoT)",
+        "reservation_category": "GOPENS",
+        "percentile": 85.977536,
+        "sorting_value": 86.3869833,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "G H Raisoni College of Engineering & Management, Nagpur",
+        "branch_name": "Data Science",
+        "reservation_category": "GOPENS",
+        "percentile": 84.3018999,
+        "sorting_value": 85.8824755,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "ST. Vincent Pallotti College of Engineering & Technology, Nagpur",
+        "branch_name": "Computer Science and Business Systems",
+        "reservation_category": "GOPENS",
+        "percentile": 84.7618697,
+        "sorting_value": 85.8461538,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "ST. Vincent Pallotti College of Engineering & Technology, Nagpur",
+        "branch_name": "Robotics and Artificial Intelligence",
+        "reservation_category": "GOPENS",
+        "percentile": 83.9367933,
+        "sorting_value": 85.6421968,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Lokmanya Tilak Jankalyan Shikshan Sanstha, Priyadarshani College of Engineering, Nagpur",
+        "branch_name": "Information Technology",
+        "reservation_category": "GOPENS",
+        "percentile": 84.4950314,
+        "sorting_value": 85.6182564,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "G H Raisoni College of Engineering & Management, Nagpur",
+        "branch_name": "Artificial Intelligence",
+        "reservation_category": "GOPENS",
+        "percentile": 84.4752545,
+        "sorting_value": 85.1919561,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Lokmanya Tilak Jankalyan Shikshan Sanstha, Priyadarshani College of Engineering, Nagpur",
+        "branch_name": "Artificial Intelligence and Data Science",
+        "reservation_category": "GOPENS",
+        "percentile": 84.1131441,
+        "sorting_value": 85.1002266,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Sir Shantilal Badjate Charitable Trust's S. B. Jain Institute of technology, Management & Research, Nagpur",
+        "branch_name": "Computer Science and Engineering(Artificial Intelligence and Machine Learning)",
+        "reservation_category": "MI",
+        "percentile": 4.0529277,
+        "sorting_value": 83.880237,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Lokmanya Tilak Jankalyan Shikshan Sanstha, Priyadarshani College of Engineering, Nagpur",
+        "branch_name": "Robotics and Artificial Intelligence",
+        "reservation_category": "GOPENS",
+        "percentile": 82.777662,
+        "sorting_value": 83.7239356,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Lokmanya Tilak Jankalyan Shikshan Sanstha, Priyadarshani College of Engineering, Nagpur",
+        "branch_name": "Computer Technology",
+        "reservation_category": "GOPENS",
+        "percentile": 82.837277,
+        "sorting_value": 83.1060395,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Sir Shantilal Badjate Charitable Trust's S. B. Jain Institute of technology, Management & Research, Nagpur",
+        "branch_name": "Computer Science and Engineering",
+        "reservation_category": "MI",
+        "percentile": 0.0930746,
+        "sorting_value": 83.1060395,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Priyadarshini Bhagwati College of Engineering, Harpur Nagar, Umred Road,Nagpur",
+        "branch_name": "Artificial Intelligence",
+        "reservation_category": "MI",
+        "percentile": 23.4132019,
+        "sorting_value": 82.837277,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Priyadarshini Bhagwati College of Engineering, Harpur Nagar, Umred Road,Nagpur",
+        "branch_name": "Computer Science and Engineering",
+        "reservation_category": "MI",
+        "percentile": 21.3037657,
+        "sorting_value": 79.7185003,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Priyadarshini Bhagwati College of Engineering, Harpur Nagar, Umred Road,Nagpur",
+        "branch_name": "Information Technology",
+        "reservation_category": "MI",
+        "percentile": 15.1144829,
+        "sorting_value": 79.6925092,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Lokmanya Tilak Jankalyan Shikshan Sanstha, Priyadarshani College of Engineering, Nagpur",
+        "branch_name": "Industrial IoT",
+        "reservation_category": "MI",
+        "percentile": 39.5742169,
+        "sorting_value": 79.3004726,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Sir Shantilal Badjate Charitable Trust's S. B. Jain Institute of technology, Management & Research, Nagpur",
+        "branch_name": "Computer Science and Engineering(Data Science)",
+        "reservation_category": "MI",
+        "percentile": 1.6345919,
+        "sorting_value": 78.4242636,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Sir Shantilal Badjate Charitable Trust's S. B. Jain Institute of technology, Management & Research, Nagpur",
+        "branch_name": "Information Technology",
+        "reservation_category": "MI",
+        "percentile": 14.7567322,
+        "sorting_value": 78.3357644,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Jaidev Education Society, J D College of Engineering and Management, Nagpur",
+        "branch_name": "Computer Science and Engineering",
+        "reservation_category": "MI",
+        "percentile": 0.2025334,
+        "sorting_value": 73.8000589,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Jaidev Education Society, J D College of Engineering and Management, Nagpur",
+        "branch_name": "Information Technology",
+        "reservation_category": "MI",
+        "percentile": 21.3037657,
+        "sorting_value": 68.1164395,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Jaidev Education Society, J D College of Engineering and Management, Nagpur",
+        "branch_name": "Artificial Intelligence",
+        "reservation_category": "MI",
+        "percentile": 3.2502633,
+        "sorting_value": 62.1365556,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Jaidev Education Society, J D College of Engineering and Management, Nagpur",
+        "branch_name": "Computer Science and Engineering (Cyber Security)",
+        "reservation_category": "MI",
+        "percentile": 7.2413793,
+        "sorting_value": 57.6249683,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "Jaidev Education Society, J D College of Engineering and Management, Nagpur",
+        "branch_name": "Computer Science and Engineering(Data Science)",
+        "reservation_category": "MI",
+        "percentile": 4.3679994,
+        "sorting_value": 54.5872518,
+        "city": "Nagpur"
+    },
+    {
+        "college_name": "K.D.M. Education Society, Vidharbha Institute of Technology,Umred Road ,Nagpur",
+        "branch_name": "Computer Science and Engineering(Data Science)",
+        "reservation_category": "MI",
+        "percentile": 14.0584844,
+        "sorting_value": 40.0432529,
+        "city": "Nagpur"
+    }
+]
